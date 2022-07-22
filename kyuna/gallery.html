@@ -5,67 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    .grid{
-        margin-left:auto;
-        margin-right:auto;
-        padding-left:50px;
-        padding-right:50px;
-        border:1px solid #ccc; 
-        text-align:center;}
+        /* 폰트 설정 */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-    .griditem{ 
-        width:200px;
-        height:300px;
-        border:1px solid #222; 
-        margin-bottom:40px;
-        margin-top:50px;    
-    }
 
-    .griditem.gt2{height:200px;}
-    .griditem.gt3{height:150px;}
-    .griditem.gt5{height:200px;}
-    .griditem.gt6{height:150px;}
-    .griditem.gt7{height:200px;}
-    .griditem.gt8{height:150px;}
-    .griditem.gt9{height:200px;}
-    .griditem.gt9{height:150px;}
+        *{
+        margin:0; padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        .container{
+        max-width: 85%;
+        margin:20px auto;
+        }
+
+        .container .title{
+        font-size: 25px;
+        background-color: #000;
+        color:#fff;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding:15px;
+        }
+
+        .container .image-container{
+        columns:3 250px;
+        gap:15px;
+        }
+
+        .container .image-container img{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100%;
+        }
         
     </style>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="jquery.masonry.min.js"></script>
-    <script src="jquery.imagesloaded.min.js"></script>
-    <script>
-        $('#grid').masonry({
-            itemSelector: '.griditem',
-            columnWidth: 200,
-            gutter: 10,
-            horizontalOrder: true,
-            // originLeft: false //왼쪽부터 정렬 
-            // originTop: false //바닥부터
-            // transitionDuration: '0.2s' //위치 전환 시간
-        });
 
-    </script>
+     <script src="/path/to/masonry.pkgd.min.js"></script>
+
 </head>
+
 <body>
     <!-- 갤러리 구성 -->
     <div id="gallery">
         <div class="container">
-            <div class="grid">
-                <div class="griditem">1</div>
-                <div class="griditem gt2">2</div>
-                <div class="griditem gt3">3</div>
-                <div class="griditem gt4">4</div>
-                <div class="griditem gt5">5</div>
-                <div class="griditem gt6">6</div>
-                <div class="griditem gt7">7</div>
-                <div class="griditem gt8">8</div>
-                <div class="griditem gt9">9</div>
-                <div class="griditem gt10">10</div>
+
+            <h1 class="title">gallery</h1>
+
+            <div class="image-container">
+                <img src="images/img1.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
+                <img src="images/img3.jpg" alt="">
+                <img src="images/img4.jpg" alt="">
+                <img src="images/img5.jpg" alt="">
+                <img src="images/img6.jpg" alt="">
+                <img src="images/img7.jpg" alt="">
+                <img src="images/img8.jpg" alt="">
+                <img src="images/img9.jpg" alt="">
+                <img src="images/img10.jpg" alt="">
             </div>
+            
         </div>
     </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        
 </body>
 </html>
