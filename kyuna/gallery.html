@@ -1,7 +1,7 @@
 <!-- 
-+ img 추가
-+ #태그 버튼 본문 헤더부분 수정
-+ 헤더에 로고 넣기
++ 섹션별 img 추가
++ #태그 이름 -> 미모지로 변경하기 
++ 라이트박스 도오전하기
  -->
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
     <style>
         /* 폰트 불러와서 적용 */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
@@ -29,13 +30,14 @@
         
         /* nav 스타일 지정 */
         section .wrapper {
-            margin:100px auto;
+            margin:45px auto;
             max-width: 1100px;
  
         }
         .wrapper nav {
             display: flex;
             justify-content: center;
+     
         }
         nav .items {
             display: flex;
@@ -48,8 +50,8 @@
             padding: 7px 25px;
             font-size:18px;
             font-weight: 500;
-            color: yellowgreen;
-            border: 2px solid yellowgreen;
+            color: pink;
+            border: 2px solid pink;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -59,7 +61,7 @@
 
         nav .items .item:hover {
             color: white;
-            background: yellowgreen;
+            background: pink;
         }
         
         /* 갤러리 스타일 지정 */
@@ -70,15 +72,20 @@
             margin: auto;
         }
 
-        .gallery .title{
+        .gallery .logo{
+            display: flex;
+            justify-content: center;
+        }
+
+        /* .gallery .title{
             font-size: 25px;
-            background-color: yellowgreen;
+            background-color: pink;
             color:#fff;
             border-radius: 5px;
             margin-bottom: 10px;
             text-align: center;
             padding:15px;
-        }
+        } */
 
         .gallery .image-container{
             columns:3 250px;
@@ -119,6 +126,8 @@
 
         }
 
+        /* paper 스타일 */
+
         
         
     </style>
@@ -131,7 +140,7 @@
         <!-- 갤러리 본문 -->
         <div class="gallery">
             <!-- 헤더 본문 (로고 넣기?)) -->
-            <h1 class="title">gallery</h1>
+            <div class="logo"><img src="images/logo.png"></div>
             <!-- nav -->
             <div class="wrapper">
                 <nav>
