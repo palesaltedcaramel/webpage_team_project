@@ -12,19 +12,92 @@
         /* 폰트 불러와서 적용 */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-
+        /* 초기화 */
         *{
         margin:0; padding:0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         }
 
+        /* 공통 스타일 지정 */
         section {
-            position: relative;
-            min-height: 100vh;
-            width:100%;
+            max-width: 85%;
+            margin:20px auto;
+        }
+        
+        /* nav 스타일 지정 */
+        section .wrapper {
+            margin:100px auto;
+            max-width: 1100px;
+ 
+        }
+        .wrapper nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav .items {
+            display: flex;
+            max-width: 720px;
+            width: 100%;
+            justify-content: space-between;
         }
 
+        nav .items .item {
+            padding: 7px 25px;
+            font-size:18px;
+            font-weight: 500;
+            color: yellowgreen;
+            border: 2px solid yellowgreen;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        nav .items .active,
+
+        nav .items .item:hover {
+            color: white;
+            background: yellowgreen;
+        }
+        
+        /* 갤러리 스타일 지정 */
+        section .gallery {
+            max-width: 1300px;
+            min-height: 100vh;
+            width: 100%;
+            margin: auto;
+        }
+
+        .gallery .title{
+            font-size: 25px;
+            background-color: yellowgreen;
+            color:#fff;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            padding:15px;
+        }
+
+        .gallery .image-container{
+            columns:3 250px;
+            gap:15px;
+        }
+
+        .gallery .image-container img{
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+            transition: .5s ease-in-out;
+        
+    
+        }
+
+        .gallery img:hover {
+            filter:brightness(80%);
+
+        }
+
+        /* 라이트박스 스타일 지정 */
         section .lightbox {
             position: fixed;
             top:0;
@@ -49,6 +122,7 @@
           
         }
 
+        /* 닫기 */
         .lightbox_content .close {
             position: absolute;
             top:0;
@@ -84,6 +158,7 @@
             background: #7d2ae8;
         }
 
+        /* 갤러리 이미지 스타일 */
         section .lightbox .showimg {
             height: 100%;
             width: 100%;
@@ -175,6 +250,19 @@
         <div class="gallery">
 
             <h1 class="title">gallery</h1>
+            
+            <div class="wrapper">
+                <nav>
+                    <div class="items">
+                        <span class="item active">All</span>
+                        <span class="item">김영선</span>
+                        <span class="item">박혜린</span>
+                        <span class="item">이명진</span>
+                        <span class="item">이정현</span>
+                        <span class="item">kevin</span>
+                    </div>
+                </nav>
+            </div>
             
             <div class="image-container">
                 <img src="images/img1.jpg" alt="">
