@@ -1,0 +1,75 @@
+<!-- 
++ img 추가 + 인피니트스크롤
++ #태그 버튼 본문 헤더부분
++ 헤더에 로고 넣기
++ search 추가?
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* 폰트 불러와서 적용 */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        max-width: 85%;
+        margin: 20px auto;
+      }
+
+      .container .title {
+        font-size: 25px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .container .image-container {
+        columns: 3 250px;
+        gap: 15px;
+      }
+
+      .container .image-container img {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 갤러리 구성 -->
+    <div id="gallery">
+      <div class="container">
+        <!-- 갤러리 헤더 -->
+        <h1 class="title">gallery</h1>
+        <!-- 갤러리 본문 -->
+        <div class="image-container">
+          <img src="images/img1.jpg" alt="" />
+          <img src="images/img2.jpg" alt="" />
+          <img src="images/img3.jpg" alt="" />
+          <img src="images/img4.jpg" alt="" />
+          <img src="images/img5.jpg" alt="" />
+          <img src="images/img6.jpg" alt="" />
+          <img src="images/img7.jpg" alt="" />
+          <img src="images/img8.jpg" alt="" />
+          <img src="images/img9.jpg" alt="" />
+          <img src="images/img10.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
