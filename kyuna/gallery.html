@@ -1,8 +1,7 @@
 <!-- 
-+ img 추가 + 인피니트스크롤?
++ img 추가
 + #태그 버튼 본문 헤더부분 수정
 + 헤더에 로고 넣기
-+ search 추가?
  -->
 
 <!DOCTYPE html>
@@ -92,13 +91,35 @@
             width: 100%;
             transition: .5s ease-in-out;
         
+        }
+
+        /* 이미지 필터링 */
+        .image-container .image.hide{
+            display: none;
     
         }
 
-        .gallery img:hover {
+        .image-container .image.show{
+            animation: animate 0.4s ease;
+    
+        }
+
+        @keyframes animate{
+            0%{
+                tansform: scale(0.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+
+        /* hover */
+        .image img:hover {
             filter:brightness(80%);
 
         }
+
+        
         
     </style>
 
@@ -115,34 +136,33 @@
             <div class="wrapper">
                 <nav>
                     <div class="items">
-                        <span class="item active">All</span>
-                        <span class="item">김영선</span>
-                        <span class="item">박혜린</span>
-                        <span class="item">이명진</span>
-                        <span class="item">이정현</span>
-                        <span class="item">kevin</span>
+                        <span class="item active" data-name="all">All</span>
+                        <span class="item" data-name="김영선">김영선</span>
+                        <span class="item" data-name="박혜린">박혜린</span>
+                        <span class="item" data-name="이명진">이명진</span>
+                        <span class="item" data-name="이정현">이정현</span>
+                        <span class="item" data-name="kevin">kevin</span>
                     </div>
                 </nav>
             </div>
             <!-- 갤러리 이미지 -->
             <div class="image-container">
-                <img src="images/img1.jpg" alt="">
-                <img src="images/img2.jpg" alt="">
-                <img src="images/img3.jpg" alt="">
-                <img src="images/img4.jpg" alt="">
-                <img src="images/img5.jpg" alt="">
-                <img src="images/img6.jpg" alt="">
-                <img src="images/img7.jpg" alt="">
-                <img src="images/img8.jpg" alt="">
-                <img src="images/img9.jpg" alt="">
-                <img src="images/img10.jpg" alt="">
+                <div class="image" data-name="김영선"><img src="images/img1.jpg" alt=""></div>
+                <div class="image" data-name="박혜린"><img src="images/img2.jpg" alt=""></div>
+                <div class="image" data-name="kevin"><img src="images/img3.jpg" alt=""></div>
+                <div class="image" data-name="김영선"><img src="images/img4.jpg" alt=""></div>
+                <div class="image" data-name="이정현"><img src="images/img5.jpg" alt=""></div>
+                <div class="image" data-name="박혜린"><img src="images/img6.jpg" alt=""></div>
+                <div class="image" data-name="이명진"><img src="images/img7.jpg" alt=""></div>
+                <div class="image" data-name="이정현"><img src="images/img8.jpg" alt=""></div>
+                <div class="image" data-name="이명진"><img src="images/img9.jpg" alt=""></div>
+                <div class="image" data-name="kevin"><img src="images/img10.jpg" alt=""></div>
             </div>
+            
+            <script src="script.js"></script>
+
 
         </div>
-
-
-
-
 
     </section>
 
