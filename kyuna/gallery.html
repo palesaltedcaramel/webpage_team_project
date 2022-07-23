@@ -1,5 +1,5 @@
 <!-- 
-+ img 추가 + 인피니트스크롤
++ img 추가 + 인피니트스크롤?
 + #태그 버튼 본문 헤더부분
 + 헤더에 로고 넣기
 + search 추가?
@@ -46,9 +46,27 @@
         margin-bottom: 10px;
         border-radius: 5px;
         width: 100%;
+        transition: .5s ease-in-out;
+        
+    
         }
+
+        /* hover */
+        .container img:hover {
+            filter:brightness(80%);
+
+        }
+
+
+        
         
     </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+
+        
+
+    </script>
 
 </head>
 
@@ -60,7 +78,7 @@
             <h1 class="title">gallery</h1>
             <!-- 갤러리 본문 -->
             <div class="image-container">
-                <img src="images/img1.jpg" alt="">
+                <a href="images/img1.jpg" alt="" class="imagelightbox"></a>
                 <img src="images/img2.jpg" alt="">
                 <img src="images/img3.jpg" alt="">
                 <img src="images/img4.jpg" alt="">
@@ -73,6 +91,11 @@
             </div>
             
         </div>
+        
+        <!-- 라이트박스 -->
+        
+
+        
     </div>
         
 </body>
