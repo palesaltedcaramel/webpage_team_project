@@ -1,0 +1,322 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gallery</title>
+     <style>
+         /* 폰트 불러와서 적용 */
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+ 
+         /* 초기화 */
+         *{
+         margin:0; padding:0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+         }
+ 
+         /* 공통 스타일 지정 */
+         section {
+            max-width: 85%;
+            margin:20px auto;
+        }
+         
+         /* nav 스타일 지정 */
+         section .wrapper {
+            margin:45px auto;
+            max-width: 1100px;
+  
+        }
+         .wrapper nav {
+            display: flex;
+            justify-content: center;
+            overflow:scroll;
+        }
+        
+         nav .items {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            justify-content: space-between;
+            
+        }
+
+
+         nav .items .item {
+            /* padding: 10% 11%; */
+            /* padding: 12%; */
+            padding: 7px 48px;
+            margin-right: 10px;
+            font-size:18px;
+            font-weight: 500;
+            width: 100px;
+            color: #ffb917;
+            border: 2px solid #ffb917;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 80px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* ===========중앙정렬 완료============
+            padding: 7px 25px;
+            font-size:18px;
+            font-weight: 500;
+            margin: 0 auto;
+            border: 2px solid pink;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            inline-size: 7rem;
+            padding: 0;
+            background: none;
+            margin-right: 0;
+            text-align: center; */
+
+ 
+         span.item.active {
+            padding-left: 34px; 
+        }
+        
+         nav .items .item:hover {
+            color: white;
+            background-color: #ffb917;
+        }
+         
+         /* 갤러리 스타일 지정 */
+         section .gallery {
+            max-width: 1300px;
+            min-height: 100vh;
+            width: 100%;
+            margin: auto;
+        }
+ 
+         .gallery .logo{
+            display: flex;
+            justify-content: center;
+        }
+ 
+         /* .gallery .title{
+             font-size: 25px;
+             background-color: pink;
+             color:#fff;
+             border-radius: 5px;
+             margin-bottom: 10px;
+             text-align: center;
+             padding:15px;
+         } */
+
+         .gallery .image-container{
+            columns:3 250px;
+            gap:15px;
+        }
+ 
+         .gallery .image-container img{
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+            transition: .5s ease-in-out;
+         
+        }
+ 
+         /* 이미지 필터링 */
+         .image-container .image.hide{
+            display: none;
+     
+        }
+ 
+         .image-container .image.show{
+            animation: animate 0.4s ease;
+     
+        }
+ 
+         @keyframes animate{
+            0%{
+                tansform: scale(0.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+ 
+         /* hover : shade, zoomIn, cursor*/
+         .image img:hover {
+             filter:brightness(80%);
+             transform: scale(1.05);
+             cursor: pointer;
+
+ 
+        }
+
+
+         /* paper 스타일 */
+
+         /* lightbox modal */
+         .container .popup-image {
+            position: fixed;
+            top:0; left:0;
+            background: rgba(0,0,0,0.8);
+            height:100%;
+            width:100%;
+            display: none;
+         }
+         .container .popup-image span{
+            position: absolute;
+            top:10px; right:30px;
+            font-size: 35px;
+            font-weight: lighter;
+            color:#fff;
+            cursor:pointer;
+            z-index: 100;
+         }
+         .container .popup-image img{
+            position: absolute;
+            top:50%;left:50%;
+            transform: translate(-50%, -50%);
+            border: 0px solid #fff;
+            border-radius: 3px;
+            width: 750px;
+            object-fit:cover;
+         }
+
+         @media (max-width:768px){
+            .container .popup-image img{
+                width:95%;
+            }
+         }
+     </style>
+ 
+ 
+ </head>
+ 
+ <body>
+     <section>
+         <!-- 갤러리 본문 -->
+         <div class="gallery">
+             <!-- 헤더 본문 -->
+             <div class="logo" ><a href="./0_landingpage.html"><img src="images/logo.png" width="400"></a></div>
+             <!-- nav -->
+             <div class="wrapper">
+                 <nav>
+                     <div class="items">
+                        <span class="item active" data-name="all">ALL</span>
+                        <span class="item" data-name="김영선" style= background-image:url(./profileimage/10.png)></span>
+                        <span class="item" data-name="박혜린" style= background-image:url(./profileimage/4.png)></span>
+                        <span class="item" data-name="이명진" style= background-image:url(./profileimage/8.png)></span>
+                        <span class="item" data-name="이정현" style= background-image:url(./profileimage/3.png)></span>
+                        <span class="item" data-name="kevin" style= background-image:url(./profileimage/kevin.png)></span>
+                        <span class="item" data-name="아무개" style= background-image:url(./profileimage/1.png)></span>
+                        <span class="item" data-name="개똥이" style= background-image:url(./profileimage/2.png)></span>
+                        <span class="item" data-name="길동이" style= background-image:url(./profileimage/5.png)></span>
+                        <span class="item" data-name="후아유" style= background-image:url(./profileimage/6.png)></span>
+                        <span class="item" data-name="아무나" style= background-image:url(./profileimage/7.png)></span>
+
+                     </div>
+                 </nav>
+             </div>
+             <!-- 갤러리 이미지 -->
+             <div class="container">
+             <div class="image-container">
+                 <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/1b/3f/d2/1b3fd24785d06119cb27a23b08ece135.jpg" alt=""></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys1.jpg" alt="영선"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn1.jpg" alt="혜린"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj1.jpeg" alt="명진"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh1.jpg" alt="정현"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys10.jpg" alt="영선"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img1.jpg" alt=""></div>
+                 <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/bf/23/a7/bf23a7e3b3b4466b8dcf1b235546f068.jpg" alt=""></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn2.jpg" alt="혜린"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys2.jpg" alt="영선"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img2.jpg" alt=""></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn3.jpg" alt="혜린"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj2.jpeg" alt="명진"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj3.png" alt="명진"></div>
+                 <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/89/87/c9/8987c942bba175acb512297b7168812f.jpg" alt=""></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys3.jpg" alt="영선"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys4.jpg" alt="영선"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh2.jpg" alt="정현"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img3.jpg" alt=""></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn4.jpg" alt="혜린"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj4.jpg" alt="명진"></div>
+                 <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/fa/e7/57/fae757c8538f14b3190357653db5e00e.jpg" alt=""></div>
+                 <div class="image" data-name="후아유"><img src="https://i.pinimg.com/236x/f7/14/6f/f7146f376d4c1ed5c634b2b76c74dfb4.jpg"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh3.jpg" alt="정현"></div>
+                 <div class="image" data-name="후아유"><img src="images/img4.jpg" alt=""></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj5.jpg" alt="명진"></div>
+                 <div class="image" data-name="아무나"><img src="images/img5.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh4.jpg" alt="정현"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn5.jpg" alt="혜린"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn6.jpg" alt="혜린"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys5.jpg" alt="영선"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh5.jpg" alt="정현"></div>
+                 <div class="image" data-name="아무나"><img src="images/img6.jpg" alt=""></div>
+                 <div class="image" data-name="후아유"><img src="https://i.pinimg.com/236x/b1/88/1d/b1881d33321327bb3ff6df52d208387e.jpg"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj6.jpeg" alt="명진"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img7.jpg" alt=""></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys6.jpg" alt="영선"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh6.jpg" alt="정현"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn7.jpg" alt="혜린"></div>
+                 <div class="image" data-name="길동이"><img src="images/img8.jpg" alt=""></div>
+                 <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/db/15/94/db15940b82f7f1196a544ce07227088a.jpg" alt=""></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj10.jpeg" alt="명진"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh7.jpg" alt="정현"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys7.jpg" alt="영선"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn8.jpg" alt="혜린"></div>
+                 <div class="image" data-name="길동이"><img src="images/img9.jpg" alt=""></div>
+                 <div class="image" data-name="개똥이"><img src="https://i.pinimg.com/236x/f5/54/a9/f554a9b8573ccf03b4c60e6df2f2cb83.jpg" alt=""></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj7.jpeg" alt="명진"></div>
+                 <div class="image" data-name="개똥이"><img src="https://i.pinimg.com/236x/b1/ee/3e/b1ee3e24b552b28261c1328d95665817.jpg"></div>
+                 <div class="image" data-name="후아유"><img src="images/img10.jpg" alt=""></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys8.jpg" alt="영선"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn9.jpg" alt="혜린"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh8.jpg" alt="정현"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj8.jpeg" alt="명진"></div>
+                 <div class="image" data-name="아무개"><img src="https://i.pinimg.com/736x/4d/3c/7d/4d3c7da216d262e78f5ec5a3198c99ad.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh9.jpg" alt="정현"></div>
+                 <div class="image" data-name="김영선"><img src="images/photo_ys9.jpg" alt="영선"></div>
+                 <div class="image" data-name="박혜린"><img src="images/photo_lynn10.jpg" alt="혜린"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh10.jpg" alt="정현"></div>
+                 <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj9.jpg" alt="명진"></div>
+                 <div class="image" data-name="아무나"><img src="https://i.pinimg.com/564x/41/f6/44/41f644a82b6393b294a45b7f3750e14a.jpg"></div>
+                 <div class="image" data-name="후아유"><img src="https://i.pinimg.com/236x/79/13/0e/79130e635a9412d8fbabe570bf1d269b.jpg"></div>
+
+
+             <div class="popup-image">
+                <span>&times;</span>
+                <img src="https://i.pinimg.com/564x/1b/3f/d2/1b3fd24785d06119cb27a23b08ece135.jpg" alt="">
+            </div>
+            </div>
+            </div>
+
+            <script>
+                document.querySelectorAll('.image-container img').forEach(image => {
+                    image.onclick = () => {
+                        document.querySelector('.popup-image').style.display = 'block';
+                        document.querySelector('.popup-image img').src = image.getAttribute('src')
+
+                    }
+                })
+
+                document.querySelector('.popup-image span').onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'none';
+
+                }
+            </script>
+
+
+             <script src="script.js"></script>
+ 
+
+             
+ 
+     </section>
+ 
+         
+ </body>
+ </html>
