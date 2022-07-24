@@ -24,65 +24,73 @@
  
          /* 공통 스타일 지정 */
          section {
-             max-width: 85%;
-             margin:20px auto;
-         }
+            max-width: 85%;
+            margin:20px auto;
+        }
          
          /* nav 스타일 지정 */
          section .wrapper {
-             margin:45px auto;
-             max-width: 1100px;
+            margin:45px auto;
+            max-width: 1100px;
   
-         }
+        }
          .wrapper nav {
-             display: flex;
-             justify-content: center;
-      
-         }
-         nav .items {
-             display: flex;
-             max-width: 720px;
-             width: 100%;
-             justify-content: space-between;
-         }
- 
-         nav .items .item {
-             padding: 7px 25px;
-             font-size:18px;
-             font-weight: 500;
-             color: pink;
-             border: 2px solid pink;
-             border-radius: 100px;
-             cursor: pointer;
-             transition: all 0.3s ease;
-         }
-
-         nav .items .item img{
             display: flex;
             justify-content: center;
-            width: 50%;
+             
       
-         }
+        }
+         nav .items {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            justify-content: space-between;
+            
+        }
+
+         nav .items .item {
+            padding: 7px 25px;
+            font-size:18px;
+            font-weight: 500;
+            width: 100px;
+            height: 100px;
+            color: pink;
+            border: 2px solid pink;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 80px;
+            
+        }
+        
+
+         nav .items .item img{
+            width: 90px;
+            height: 90px;
+            
+            
+        }
  
          nav .items .active,
  
          nav .items .item:hover {
-             color: white;
-             background: pink;
-         }
+            color: white;
+            background: pink;
+        }
          
          /* 갤러리 스타일 지정 */
          section .gallery {
-             max-width: 1300px;
-             min-height: 100vh;
-             width: 100%;
-             margin: auto;
-         }
+            max-width: 1300px;
+            min-height: 100vh;
+            width: 100%;
+            margin: auto;
+        }
  
          .gallery .logo{
-             display: flex;
-             justify-content: center;
-         }
+            display: flex;
+            justify-content: center;
+        }
  
          /* .gallery .title{
              font-size: 25px;
@@ -95,43 +103,43 @@
          } */
  
          .gallery .image-container{
-             columns:3 250px;
-             gap:15px;
-         }
+            columns:3 250px;
+            gap:15px;
+        }
  
          .gallery .image-container img{
-             margin-bottom: 10px;
-             border-radius: 5px;
-             width: 100%;
-             transition: .5s ease-in-out;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+            transition: .5s ease-in-out;
          
-         }
+        }
  
          /* 이미지 필터링 */
          .image-container .image.hide{
-             display: none;
+            display: none;
      
-         }
+        }
  
          .image-container .image.show{
-             animation: animate 0.4s ease;
+            animation: animate 0.4s ease;
      
-         }
+        }
  
          @keyframes animate{
-             0%{
-                 tansform: scale(0.5);
-             }
-             100%{
-                 transform: scale(1);
-             }
-         }
+            0%{
+                tansform: scale(0.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
  
          /* hover */
          .image img:hover {
              filter:brightness(80%);
  
-         }
+        }
  
          /* paper 스타일 */
  
@@ -152,12 +160,18 @@
              <div class="wrapper">
                  <nav>
                      <div class="items">
-                         <span class="item active" data-name="all">All</span>
+                         <span class="item active" data-name="all">ALL</span>
                          <span class="item" data-name="김영선"><img src="profileimage/10.png"></span>
-                         <span class="item" data-name="박혜린">박혜린</span>
-                         <span class="item" data-name="이명진">이명진</span>
-                         <span class="item" data-name="이정현">이정현</span>
-                         <span class="item" data-name="kevin">kevin</span>
+                         <span class="item" data-name="박혜린"><img src="profileimage/4.png"></span>
+                         <span class="item" data-name="이명진"><img src="profileimage/8.png"></span>
+                         <span class="item" data-name="이정현"><img src="profileimage/3.png"></span>
+                         <span class="item" data-name="kevin"><img src="profileimage/kevin.png"></span>
+                         <span class="item" data-name="아무개"><img src="profileimage/1.png"></span>
+                         <span class="item" data-name="개똥이"><img src="profileimage/6.png"></span>
+                         <span class="item" data-name="길동이"><img src="profileimage/5.png"></span>
+                         <span class="item" data-name="후아유"><img src="profileimage/7.png"></span>
+                         <span class="item" data-name="후아유"><img src="profileimage/2.png"></span>
+                         
                      </div>
                  </nav>
              </div>
@@ -177,8 +191,8 @@
              
              <script src="script.js"></script>
  
- 
-         </div>
+
+             
  
      </section>
  
