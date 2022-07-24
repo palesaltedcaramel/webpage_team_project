@@ -33,42 +33,24 @@
     </script>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
       * {
         background: white;
         width: 100%;
         margin: 0 auto;
         padding: 0;
+        font-family: "Poppins", sans-serif;
       }
 
-      /*===============글자 안에 배경 이미지 넣기================== */
-      .title {
-        width: 700px;
-        margin: 1em auto;
-        text-align: center;
-        background: url(./images/img_titletext.png);
-        background-size: cover;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        color: transparent;
-        font-size: 6rem;
-        font-family: "Anton", sans-serif;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: -0.01em;
-        line-height: 110%;
+      /*====================== 타이틀 이미지 =======================*/
+      .title img {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
-
-      .title > a {
-        text-decoration: none;
-      }
-      /*
-        font-family: "Dancing Script", cursive;
-        font-family: "Edu VIC WA NT Beginner", cursive;
-        font-family: "Noto Sans KR", sans-serif;
-        font-family: "Questrial", sans-serif;
-      */
 
       /*=============== 가로로 움직이는 유저 리스트 ================== */
       ul {
@@ -168,7 +150,11 @@
         <div class="col-md-1"></div>
         <div class="title col-md-10">
           <!-- title 누르면 랜딩페이지로 이동 -->
-          <a href="./0_landingpage.html">BBOM PAGE</a><br />
+          <a href="./0_landingpage.html"
+            ><img
+              src="../Bbompage/images/logo.png"
+              style="width: 26rem; background-color: white" /></a
+          ><br />
         </div>
         <div class="col-md-1"></div>
       </div>
