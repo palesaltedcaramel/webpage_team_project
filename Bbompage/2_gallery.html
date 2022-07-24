@@ -1,7 +1,3 @@
-<!-- 
-+ 라이트박스 도오전하기
- -->
-
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -150,6 +146,42 @@
         }
  
          /* paper 스타일 */
+
+/* modal */
+         .container .popup-image {
+            position: fixed;
+            top:0; left:0;
+            background: rgba(0,0,0,0.9);
+            height:100%;
+            width:100%;
+            display: none;
+         }
+         .container .popup-image span{
+            position: absolute;
+            top:0; right:10px;
+            font-size: 40px;
+            font-weight: bolder;
+            color:#fff;
+            cursor:pointer;
+            z-index: 100;
+         }
+         .container .popup-image img{
+            position: absolute;
+            top:50%;left:50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #fff;
+            border-radius: 5px;
+            width: 750px;
+            object-fit: cover;
+         }
+
+         @media (max-width:768px){
+            .container .popup-image img{
+                width:95%;
+            }
+         }
+
+
  
          
          
@@ -184,6 +216,7 @@
                  </nav>
              </div>
              <!-- 갤러리 이미지 -->
+             <div class="container">
              <div class="image-container">
                  <div class="image" data-name="kevin"><img src="https://i.pinimg.com/564x/1b/3f/d2/1b3fd24785d06119cb27a23b08ece135.jpg" alt=""></div>
                  <div class="image" data-name="김영선"><img src="images/photo_ys1.jpg" alt="영선"></div>
@@ -247,8 +280,31 @@
                  <div class="image" data-name="이명진"><img src="images/mj_photo/photo_mj9.jpg" alt="명진"></div>
                  <div class="image" data-name="아무나"><img src="https://i.pinimg.com/564x/41/f6/44/41f644a82b6393b294a45b7f3750e14a.jpg"></div>
                  <div class="image" data-name="후아유"><img src="https://i.pinimg.com/236x/79/13/0e/79130e635a9412d8fbabe570bf1d269b.jpg"></div>
-             </div>
-             
+
+
+             <div class="popup-image">
+                <span>&times;</span>
+                <img src="https://i.pinimg.com/564x/1b/3f/d2/1b3fd24785d06119cb27a23b08ece135.jpg" alt="">
+            </div>
+            </div>
+            </div>
+
+            <script>
+                document.querySelectorAll('.image-container img').forEach(image => {
+                    image.onclick = () => {
+                        document.querySelector('.popup-image').style.display = 'block';
+                        document.querySelector('.popup-image img').src = image.getAttribute('src')
+
+                    }
+                })
+
+                document.querySelector('.popup-image span').onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'none';
+
+                }
+            </script>
+
+
              <script src="script.js"></script>
  
 
