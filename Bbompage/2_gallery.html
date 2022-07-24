@@ -31,6 +31,8 @@
          .wrapper nav {
             display: flex;
             justify-content: center;
+            overflow:scroll;
+
         }
         
          nav .items {
@@ -42,7 +44,8 @@
         }
 
          nav .items .item {
-            padding: 7px 25px;
+            padding: 7px 48px;
+            margin-right: 10px;
             font-size:18px;
             font-weight: 500;
             width: 100px;
@@ -76,8 +79,9 @@
             text-align: center; */
 
  
-         nav .items .active,
- 
+        span.item.active {
+            padding-left: 34px; 
+        } 
          nav .items .item:hover {
             color: white;
             background-color: pink;
