@@ -1,6 +1,5 @@
 <!-- 
 + 섹션별 img 추가
-+ #태그 이름 -> 미모지로 변경하기 
 + 라이트박스 도오전하기
  -->
 
@@ -47,7 +46,6 @@
         }
 
          nav .items .item {
-            /*
             padding: 7px 25px;
             font-size:18px;
             font-weight: 500;
@@ -59,9 +57,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
-            line-height: 80px;*/
-
-            /*===========중앙정렬 완료============*/
+            line-height: 80px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* ===========중앙정렬 완료============
             padding: 7px 25px;
             font-size:18px;
             font-weight: 500;
@@ -75,16 +77,8 @@
             padding: 0;
             background: none;
             margin-right: 0;
-            text-align: center;
-            
-        }
-        
+            text-align: center; */
 
-         nav .items .item img{
-            width: 90px;
-            height: 90px;
-            
-        }
  
          nav .items .active,
  
@@ -168,39 +162,49 @@
      <section>
          <!-- 갤러리 본문 -->
          <div class="gallery">
-             <!-- 헤더 본문 (로고 넣기?)) -->
+             <!-- 헤더 본문 -->
              <div class="logo"><img src="images/logo.png" width="400"></div>
              <!-- nav -->
              <div class="wrapper">
                  <nav>
                      <div class="items">
-                         <span class="item active" data-name="all">ALL</span>
-                         <span class="item" data-name="김영선"><img src="profileimage/10.png"></span>
-                         <span class="item" data-name="박혜린"><img src="profileimage/4.png"></span>
-                         <span class="item" data-name="이명진"><img src="profileimage/8.png"></span>
-                         <span class="item" data-name="이정현"><img src="profileimage/3.png"></span>
-                         <span class="item" data-name="kevin"><img src="profileimage/kevin.png"></span>
-                         <span class="item" data-name="아무개"><img src="profileimage/1.png"></span>
-                         <span class="item" data-name="개똥이"><img src="profileimage/6.png"></span>
-                         <span class="item" data-name="길동이"><img src="profileimage/5.png"></span>
-                         <span class="item" data-name="후아유"><img src="profileimage/7.png"></span>
-                         <span class="item" data-name="후아유"><img src="profileimage/2.png"></span>
-                         
+                        <span class="item active" data-name="all">ALL</span>
+                        <span class="item" data-name="김영선" style= background-image:url(./profileimage/10.png)></span>
+                        <span class="item" data-name="박혜린" style= background-image:url(./profileimage/4.png)></span>
+                        <span class="item" data-name="이명진" style= background-image:url(./profileimage/8.png)></span>
+                        <span class="item" data-name="이정현" style= background-image:url(./profileimage/3.png)></span>
+                        <span class="item" data-name="kevin" style= background-image:url(./profileimage/kevin.png)></span>
+                        <span class="item" data-name="아무개" style= background-image:url(./profileimage/1.png)></span>
+                        <span class="item" data-name="개똥이" style= background-image:url(./profileimage/2.png)></span>
+                        <span class="item" data-name="길동이" style= background-image:url(./profileimage/5.png)></span>
+                        <span class="item" data-name="후아유" style= background-image:url(./profileimage/6.png)></span>
+                        <span class="item" data-name="아무나" style= background-image:url(./profileimage/7.png)></span>
+                        <span class="item" data-name="누구야" style= background-image:url(./profileimage/9.png)></span>
                      </div>
                  </nav>
              </div>
              <!-- 갤러리 이미지 -->
              <div class="image-container">
-                 <div class="image" data-name="김영선"><img src="images/img1.jpg" alt=""></div>
-                 <div class="image" data-name="박혜린"><img src="images/img2.jpg" alt=""></div>
-                 <div class="image" data-name="kevin"><img src="images/img3.jpg" alt=""></div>
-                 <div class="image" data-name="김영선"><img src="images/img4.jpg" alt=""></div>
-                 <div class="image" data-name="이정현"><img src="images/img5.jpg" alt=""></div>
-                 <div class="image" data-name="박혜린"><img src="images/img6.jpg" alt=""></div>
-                 <div class="image" data-name="이명진"><img src="images/img7.jpg" alt=""></div>
-                 <div class="image" data-name="이정현"><img src="images/img8.jpg" alt=""></div>
-                 <div class="image" data-name="이명진"><img src="images/img9.jpg" alt=""></div>
-                 <div class="image" data-name="kevin"><img src="images/img10.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh1.jpg" alt="정현"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img1.jpg" alt=""></div>
+                 <div class="image" data-name="개똥이"><img src="images/img2.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh2.jpg" alt="정현"></div>
+                 <div class="image" data-name="개똥이"><img src="images/img3.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh3.jpg" alt="정현"></div>
+                 <div class="image" data-name="후아유"><img src="images/img4.jpg" alt=""></div>
+                 <div class="image" data-name="아무나"><img src="images/img5.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh4.jpg" alt="정현"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh5.jpg" alt="정현"></div>
+                 <div class="image" data-name="누구야"><img src="images/img6.jpg" alt=""></div>
+                 <div class="image" data-name="개똥이"><img src="images/img7.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh6.jpg" alt="정현"></div>
+                 <div class="image" data-name="길동이"><img src="images/img8.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh7.jpg" alt="정현"></div>
+                 <div class="image" data-name="길동이"><img src="images/img9.jpg" alt=""></div>
+                 <div class="image" data-name="후아유"><img src="images/img10.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh8.jpg" alt="정현"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh9.jpg" alt="정현"></div>
+                 <div class="image" data-name="이정현"><img src="images/photo_jh10.jpg" alt="정현"></div>
              </div>
              
              <script src="script.js"></script>
