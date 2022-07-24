@@ -25,13 +25,19 @@
       rel="stylesheet"
     />
     <script src="//code.jquery.com/jquery.min.js"></script>
-    <script>
+    <!-- <script>
       /*================ 한번 누른 좋아요는 취소할 수 없음 ==============*/
       function like_active() {
         const subs = document.getElementsByClassName("like")[0];
         subs.innerText = "💖";
       }
-    </script>
+    </script> -->
+
+    <!-- 하트 버튼 >> 폰트 어썸 cdn -->
+    <script src="https://kit.fontawesome.com/3c342ee7e3.js" crossorigin="anonymous"></script>
+
+    <!-- 하트 버튼 >> 자바 스크립트 연결 -->
+    <script src="1_mainpage_script.js"></script>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
@@ -136,6 +142,11 @@
           width: fit-content;
           left: 0;
           font-size: 0.5rem;
+        }
+
+        /* 하트 버튼 색상 */
+        .heart {
+          color: red;
         }
       }
     </style>
@@ -276,15 +287,10 @@
             <div class="card-body">
               <p class="card-subtitle">#GOODS</p>
               <p class="card-text">U | 다이소에서 5만원어치 플렉스 했어요</p>
-              <!-- 좋아요 하트 버튼 누르기 전 상태(버튼 타입 아니고 그냥 텍스트) -->
-              <button
-                class="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <!-- 새로운 하트 버튼 -->
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -300,14 +306,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PIC</p>
               <p class="card-text">C | 체코의 아름다운 소도시에요</p>
-              <button
-                class="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -323,14 +324,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PET</p>
               <p class="card-text">H | 우리 강아지 짱 귀엽죠?</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -348,14 +344,9 @@
               <p class="card-text">
                 O | 야옹 안녕하세요 저는 오늘 샐러드를 먹었어요^0^
               </p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -370,14 +361,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PET</p>
               <p class="card-text">Q | 야옹이에오</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -392,14 +378,9 @@
             <div class="card-body">
               <p class="card-subtitle">#CODE</p>
               <p class="card-text">L | 저는 오늘 숙제를 다했어요</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -414,14 +395,9 @@
             <div class="card-body">
               <p class="card-subtitle">#CODE</p>
               <p class="card-text">Z | 제가 짜놓은 코드 좀 보세여 ㅎㅎㅎ</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -436,14 +412,9 @@
             <div class="card-body">
               <p class="card-subtitle">#HOBBY</p>
               <p class="card-text">P | 오랜만에 러닝하고 왔잖아요 아주 개운</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -458,14 +429,9 @@
             <div class="card-body">
               <p class="card-subtitle">#HOBBY</p>
               <p class="card-text">R | 저는 오늘 요가~~</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -480,14 +446,9 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">D | 하와이에서 서핑하고 왔으</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -502,14 +463,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PIC</p>
               <p class="card-text">M | 오늘 생일인데 생일 축하해주세용</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -524,14 +480,9 @@
             <div class="card-body">
               <p class="card-subtitle">#HOBBY</p>
               <p class="card-text">O | 뮤지컬 보고 왔어여</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -546,14 +497,9 @@
             <div class="card-body">
               <p class="card-subtitle">#HOBBY</p>
               <p class="card-text">N | 캠핑 너무 재밌어~~</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -568,14 +514,9 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">W | 학원 앞에 피자집 새로 생김 존맛</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                💖
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -590,14 +531,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PIC</p>
               <p class="card-text">C | 제가 찍은 사진</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -612,14 +548,9 @@
             <div class="card-body">
               <p class="card-subtitle">#GOODS</p>
               <p class="card-text">E | 맥북이랑 키보드랑 마우스 질렀어여</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -634,14 +565,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PIC</p>
               <p class="card-text">W | 이건 친구가 찍은 사진</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -656,14 +582,9 @@
             <div class="card-body">
               <p class="card-subtitle">#PET</p>
               <p class="card-text">G | 야옹</p>
-              <button
-                id="like"
-                type="button"
-                onclick="like_active()"
-                style="width: 1rem; border: none"
-              >
-                🤍
-              </button>
+              <div class="heart active">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
