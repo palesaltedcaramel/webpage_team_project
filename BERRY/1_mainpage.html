@@ -23,39 +23,34 @@
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script>
+      /*================ 한번 누른 좋아요는 취소할 수 없음 ==============*/
+      function like_active() {
+        const subs = document.getElementsByClassName("like")[0];
+        subs.innerText = "💖";
+      }
+    </script>
+
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
       * {
         background: white;
         width: 100%;
         margin: 0 auto;
         padding: 0;
+        font-family: "Poppins", sans-serif;
       }
 
-      /*===============글자 안에 배경 이미지 넣기================== */
-      .title {
-        width: 700px;
-        margin: 1em auto;
-        text-align: center;
-        background: url(./img_titletext.png);
-        background-size: cover;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        color: transparent;
-        font-size: 6rem;
-        font-family: "Anton", sans-serif;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: -0.01em;
-        line-height: 110%;
+      /*====================== 타이틀 이미지 =======================*/
+      .title img {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
-      /*
-        font-family: "Dancing Script", cursive;
-        font-family: "Edu VIC WA NT Beginner", cursive;
-        font-family: "Noto Sans KR", sans-serif;
-        font-family: "Questrial", sans-serif;
-      */
 
       /*=============== 가로로 움직이는 유저 리스트 ================== */
       ul {
@@ -134,11 +129,12 @@
           margin: 0 auto;
         }
 
+        /*============= 해시태그 버튼 사이즈 변경 ================*/
         .btn-info {
           margin: 0 auto;
-          margin-left: 1rem;
           width: fit-content;
           left: 0;
+          font-size: 0.5rem;
         }
       }
     </style>
@@ -152,7 +148,14 @@
       <!--제목-->
       <div class="row header">
         <div class="col-md-1"></div>
-        <div class="title col-md-10">BBOM PAGE<br /></div>
+        <div class="title col-md-10">
+          <!-- title 누르면 랜딩페이지로 이동 -->
+          <a href="./0_landingpage.html"
+            ><img
+              src="../Bbompage/images/logo.png"
+              style="width: 26rem; background-color: white" /></a
+          ><br />
+        </div>
         <div class="col-md-1"></div>
       </div>
       <!--슬라이드 가능한 유저 리스트-->
@@ -267,6 +270,14 @@
                   "
               /></a>
             </li>
+            <li>
+              <a href="로그인페이지">
+                <img
+                  src="https://cdn.pixabay.com/photo/2021/12/21/04/58/add-6884593__480.png"
+                  class="rounded-circle"
+                  style="width: 6rem; height: auto; background: transparent"
+              /></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -290,17 +301,23 @@
         <div class="c1 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2016/11/06/18/16/notebook-1803664__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
               <p class="card-subtitle">#GOODS</p>
-              <p class="card-text">
-                U | 저는 오늘 다이소에서 5만원어치 플렉스 했어요 잘했죠?
-              </p>
-              <p></p>
+              <p class="card-text">U | 다이소에서 5만원어치 플렉스 했어요</p>
+              <!-- 좋아요 하트 버튼 누르기 전 상태(버튼 타입 아니고 그냥 텍스트) -->
+              <button
+                class="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
@@ -308,14 +325,22 @@
         <div class="c2 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2018/11/05/23/36/cesky-krumlov-3797094__340.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
               <p class="card-subtitle">#PIC</p>
-              <p class="card-text">C | 어제 찍은 한강 야경이에오</p>
+              <p class="card-text">C | 체코의 아름다운 소도시에요</p>
+              <button
+                class="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
@@ -323,7 +348,7 @@
         <div class="c3 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2019/11/07/08/40/puppy-4608266__340.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
@@ -331,6 +356,14 @@
             <div class="card-body">
               <p class="card-subtitle">#PET</p>
               <p class="card-text">H | 우리 강아지 짱 귀엽죠?</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
@@ -338,7 +371,7 @@
         <div class="c4 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2016/08/18/18/40/salad-1603608__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
@@ -346,48 +379,67 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                O | 야옹 안녕하세요 저는 오늘 샐러드를 코끼리가 먹는 만큼
-                먹었어요 잘했죠?
+                O | 야옹 안녕하세요 저는 오늘 샐러드를 먹었어요^0^
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
         <div class="c5 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2015/02/25/17/56/cat-649164__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
-              <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                Q | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-subtitle">#PET</p>
+              <p class="card-text">Q | 야옹이에오</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
         <div class="c6 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__340.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
-              <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                L | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-subtitle">#CODE</p>
+              <p class="card-text">L | 저는 오늘 숙제를 다했어요</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
         <div class="c7 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2015/09/17/17/25/code-944499__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
@@ -395,70 +447,102 @@
             <div class="card-body">
               <p class="card-subtitle">#CODE</p>
               <p class="card-text">Z | 제가 짜놓은 코드 좀 보세여 ㅎㅎㅎ</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
         <div class="c8 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2017/08/31/08/48/young-woman-2699780__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
-              <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-subtitle">#HOBBY</p>
+              <p class="card-text">P | 오랜만에 러닝하고 왔잖아요 아주 개운</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
         <div class="c9 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2016/11/18/14/15/woman-1834827__340.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
-              <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-subtitle">#HOBBY</p>
+              <p class="card-text">R | 저는 오늘 요가~~</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
         <div class="c10 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2015/11/10/14/36/hawaii-1037043__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-text">D | 하와이에서 서핑하고 왔으</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
         <div class="c11 col-md-4">
           <div class="card" style="width: 21rem; height: 21rem">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPnQwtAl2gJxbjA32xjLg_H0pa8T8FWKmaQg&usqp=CAU"
+              src="https://cdn.pixabay.com/photo/2015/09/19/16/19/birthday-947438__480.jpg"
               class="card-img-top"
               alt="..."
               height="200px"
             />
             <div class="card-body">
-              <p class="card-subtitle">#FOOD</p>
-              <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
-              </p>
+              <p class="card-subtitle">#PIC</p>
+              <p class="card-text">M | 오늘 생일인데 생일 축하해주세용</p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
@@ -473,8 +557,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
@@ -489,8 +581,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
@@ -505,8 +605,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                💖
+              </button>
             </div>
           </div>
         </div>
@@ -521,8 +629,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
@@ -537,8 +653,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
@@ -553,8 +677,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
@@ -569,8 +701,16 @@
             <div class="card-body">
               <p class="card-subtitle">#FOOD</p>
               <p class="card-text">
-                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요 잘했죠?
+                1 | 야옹 안녕하세요 저는 오늘 숙제를 다 했어요
               </p>
+              <button
+                id="like"
+                type="button"
+                onclick="like_active()"
+                style="width: 1rem; border: none"
+              >
+                🤍
+              </button>
             </div>
           </div>
         </div>
