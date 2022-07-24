@@ -1,151 +1,187 @@
 <!-- 
-+ img 추가 + 인피니트스크롤?
-+ #태그 버튼 본문 헤더부분 수정
-+ 헤더에 로고 넣기
-+ search 추가?
++ 섹션별 img 추가
++ #태그 이름 -> 미모지로 변경하기 
++ 라이트박스 도오전하기
  -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* 폰트 불러와서 적용 */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-
-        /* 초기화 */
-        *{
-        margin:0; padding:0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        }
-
-        /* 공통 스타일 지정 */
-        section {
-            max-width: 85%;
-            margin:20px auto;
-        }
-        
-        /* nav 스타일 지정 */
-        section .wrapper {
-            margin:100px auto;
-            max-width: 1100px;
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>gallery</title>
+     <style>
+         /* 폰트 불러와서 적용 */
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
  
-        }
-        .wrapper nav {
+         /* 초기화 */
+         *{
+         margin:0; padding:0;
+         box-sizing: border-box;
+         font-family: 'Poppins', sans-serif;
+         }
+ 
+         /* 공통 스타일 지정 */
+         section {
+             max-width: 85%;
+             margin:20px auto;
+         }
+         
+         /* nav 스타일 지정 */
+         section .wrapper {
+             margin:45px auto;
+             max-width: 1100px;
+  
+         }
+         .wrapper nav {
+             display: flex;
+             justify-content: center;
+      
+         }
+         nav .items {
+             display: flex;
+             max-width: 720px;
+             width: 100%;
+             justify-content: space-between;
+         }
+ 
+         nav .items .item {
+             padding: 7px 25px;
+             font-size:18px;
+             font-weight: 500;
+             color: pink;
+             border: 2px solid pink;
+             border-radius: 100px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+         }
+
+         nav .items .item img{
             display: flex;
             justify-content: center;
-        }
-        nav .items {
-            display: flex;
-            max-width: 720px;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        nav .items .item {
-            padding: 7px 25px;
-            font-size:18px;
-            font-weight: 500;
-            color: yellowgreen;
-            border: 2px solid yellowgreen;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        nav .items .active,
-
-        nav .items .item:hover {
-            color: white;
-            background: yellowgreen;
-        }
-        
-        /* 갤러리 스타일 지정 */
-        section .gallery {
-            max-width: 1300px;
-            min-height: 100vh;
-            width: 100%;
-            margin: auto;
-        }
-
-        .gallery .title{
-            font-size: 25px;
-            background-color: yellowgreen;
-            color:#fff;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            text-align: center;
-            padding:15px;
-        }
-
-        .gallery .image-container{
-            columns:3 250px;
-            gap:15px;
-        }
-
-        .gallery .image-container img{
-            margin-bottom: 10px;
-            border-radius: 5px;
-            width: 100%;
-            transition: .5s ease-in-out;
-        
-    
-        }
-
-        .gallery img:hover {
-            filter:brightness(80%);
-
-        }
-        
-    </style>
-
-
-</head>
-
-<body>
-    <section>
-        <!-- 갤러리 본문 -->
-        <div class="gallery">
-            <!-- 헤더 본문 (로고 넣기?)) -->
-            <h1 class="title">gallery</h1>
-            <!-- nav -->
-            <div class="wrapper">
-                <nav>
-                    <div class="items">
-                        <span class="item active">All</span>
-                        <span class="item">김영선</span>
-                        <span class="item">박혜린</span>
-                        <span class="item">이명진</span>
-                        <span class="item">이정현</span>
-                        <span class="item">kevin</span>
-                    </div>
-                </nav>
-            </div>
-            <!-- 갤러리 이미지 -->
-            <div class="image-container">
-                <img src="images/img1.jpg" alt="">
-                <img src="images/img2.jpg" alt="">
-                <img src="images/img3.jpg" alt="">
-                <img src="images/img4.jpg" alt="">
-                <img src="images/img5.jpg" alt="">
-                <img src="images/img6.jpg" alt="">
-                <img src="images/img7.jpg" alt="">
-                <img src="images/img8.jpg" alt="">
-                <img src="images/img9.jpg" alt="">
-                <img src="images/img10.jpg" alt="">
-            </div>
-
-        </div>
-
-
-
-
-
-    </section>
-
-        
-</body>
-</html>
+            width: 50%;
+      
+         }
+ 
+         nav .items .active,
+ 
+         nav .items .item:hover {
+             color: white;
+             background: pink;
+         }
+         
+         /* 갤러리 스타일 지정 */
+         section .gallery {
+             max-width: 1300px;
+             min-height: 100vh;
+             width: 100%;
+             margin: auto;
+         }
+ 
+         .gallery .logo{
+             display: flex;
+             justify-content: center;
+         }
+ 
+         /* .gallery .title{
+             font-size: 25px;
+             background-color: pink;
+             color:#fff;
+             border-radius: 5px;
+             margin-bottom: 10px;
+             text-align: center;
+             padding:15px;
+         } */
+ 
+         .gallery .image-container{
+             columns:3 250px;
+             gap:15px;
+         }
+ 
+         .gallery .image-container img{
+             margin-bottom: 10px;
+             border-radius: 5px;
+             width: 100%;
+             transition: .5s ease-in-out;
+         
+         }
+ 
+         /* 이미지 필터링 */
+         .image-container .image.hide{
+             display: none;
+     
+         }
+ 
+         .image-container .image.show{
+             animation: animate 0.4s ease;
+     
+         }
+ 
+         @keyframes animate{
+             0%{
+                 tansform: scale(0.5);
+             }
+             100%{
+                 transform: scale(1);
+             }
+         }
+ 
+         /* hover */
+         .image img:hover {
+             filter:brightness(80%);
+ 
+         }
+ 
+         /* paper 스타일 */
+ 
+         
+         
+     </style>
+ 
+ 
+ </head>
+ 
+ <body>
+     <section>
+         <!-- 갤러리 본문 -->
+         <div class="gallery">
+             <!-- 헤더 본문 (로고 넣기?)) -->
+             <div class="logo"><img src="images/logo.png" width="400"></div>
+             <!-- nav -->
+             <div class="wrapper">
+                 <nav>
+                     <div class="items">
+                         <span class="item active" data-name="all">All</span>
+                         <span class="item" data-name="김영선"><img src="profileimage/10.png"></span>
+                         <span class="item" data-name="박혜린">박혜린</span>
+                         <span class="item" data-name="이명진">이명진</span>
+                         <span class="item" data-name="이정현">이정현</span>
+                         <span class="item" data-name="kevin">kevin</span>
+                     </div>
+                 </nav>
+             </div>
+             <!-- 갤러리 이미지 -->
+             <div class="image-container">
+                 <div class="image" data-name="김영선"><img src="images/img1.jpg" alt=""></div>
+                 <div class="image" data-name="박혜린"><img src="images/img2.jpg" alt=""></div>
+                 <div class="image" data-name="kevin"><img src="images/img3.jpg" alt=""></div>
+                 <div class="image" data-name="김영선"><img src="images/img4.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/img5.jpg" alt=""></div>
+                 <div class="image" data-name="박혜린"><img src="images/img6.jpg" alt=""></div>
+                 <div class="image" data-name="이명진"><img src="images/img7.jpg" alt=""></div>
+                 <div class="image" data-name="이정현"><img src="images/img8.jpg" alt=""></div>
+                 <div class="image" data-name="이명진"><img src="images/img9.jpg" alt=""></div>
+                 <div class="image" data-name="kevin"><img src="images/img10.jpg" alt=""></div>
+             </div>
+             
+             <script src="script.js"></script>
+ 
+ 
+         </div>
+ 
+     </section>
+ 
+         
+ </body>
+ </html>
